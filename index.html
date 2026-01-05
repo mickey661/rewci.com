@@ -11,28 +11,37 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 
   <style>
+    * { box-sizing: border-box; }
+
     body {
       font-family: 'Montserrat', sans-serif;
       background: linear-gradient(180deg, #020617, #0f172a);
       color: #ffffff;
+      margin: 0;
+      text-align: center;
+
+      /* iPhone-safe layout */
+      min-height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
-      margin: 0;
-      text-align: center;
+      overflow-y: auto;
+
+      /* Notches / safe areas */
+      padding-top: env(safe-area-inset-top);
+      padding-bottom: env(safe-area-inset-bottom);
     }
 
     .container {
       max-width: 700px;
-      padding: 20px;
+      padding: 32px 20px;
     }
 
     h1 {
       font-size: 3.2rem;
       font-weight: 600;
       letter-spacing: 0.08em;
-      margin-bottom: 1.5rem;
+      margin: 0 0 1.5rem;
     }
 
     .meta {
@@ -47,6 +56,7 @@
       font-weight: 400;
       line-height: 1.6;
       opacity: 0.9;
+      margin-top: 1rem;
     }
 
     .closing {
@@ -55,6 +65,14 @@
       font-weight: 300;
       opacity: 0.7;
       letter-spacing: 0.03em;
+    }
+
+    /* On smaller screens, align content toward the top so nothing gets clipped */
+    @media (max-width: 480px) {
+      body { align-items: flex-start; }
+      .container { padding-top: 48px; }
+      h1 { font-size: 2.4rem; }
+      .message { font-size: 1.15rem; }
     }
   </style>
 </head>
@@ -69,21 +87,22 @@
     <div class="message">
       REWCI had a great run.
     </div>
-<div class="message" style="margin-top: 2rem;">
-  REWCI.com was an early pioneer in online home improvement retail.
-  <br><br>
-  Launched in the early days of e-commerce, REWCI helped prove that major home
-  improvement products could be researched, purchased, and delivered online—
-  long before it became standard practice.
-  <br><br>
-  As one of the first home improvement retailers on the internet, REWCI built
-  real infrastructure, real fulfillment, and real customer trust. That work
-  earned national recognition, including placement on the
-  <strong>Internet Retailer Top 500 Retail Websites</strong>.
-</div>
+
+    <div class="message" style="margin-top: 2rem;">
+      REWCI.com was an early pioneer in online home improvement retail.
+      <br><br>
+      Launched in the early days of e-commerce, REWCI helped prove that major home
+      improvement products could be researched, purchased, and delivered online—
+      long before it became standard practice.
+      <br><br>
+      As one of the first home improvement retailers on the internet, REWCI built
+      real infrastructure, real fulfillment, and real customer trust. That work
+      earned national recognition, including placement on the
+      <strong>Internet Retailer Top 500 Retail Websites</strong>.
+    </div>
 
     <div class="closing">
-    In 2026, after 25 years we’re calling it quits. No regrets.
+      In 2026, after 25 years we’re calling it quits. No regrets.
     </div>
   </div>
 </body>
